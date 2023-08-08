@@ -1,0 +1,28 @@
+﻿<Window x:Class="QBuild_Challenge.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QBuild_Challenge"
+        mc:Ignorable="d"
+        Title="QBuild Challenge" Height="767.825" Width="800">
+    <Grid>
+        <Button x:Name="btnPopulateTree" Content="Populate Data In Tree" HorizontalAlignment="Left" Margin="355,203,0,0" VerticalAlignment="Top" Width="220" Height="39" Click="btnPopulateTree_Click"/>
+        <Button x:Name="exitAppBtn" Content="Exit From Application" HorizontalAlignment="Left" Margin="355,283,0,0" VerticalAlignment="Top" Width="220" Height="39" Click="exitAppBtn_Click"/>
+        <Label x:Name="lblParentChild" Content="Label" HorizontalAlignment="Left" Margin="369,80,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblCurrentPart" Content="Label" HorizontalAlignment="Left" Margin="369,136,0,0" VerticalAlignment="Top"/>
+        <TreeView x:Name="treeViewDependencies" HorizontalAlignment="Left" Height="260" Margin="20,62,0,0" VerticalAlignment="Top" Width="301" SelectedItemChanged="treeViewDependencies_SelectedItemChanged"/>
+        <DataGrid x:Name="dataGrid" Margin="10,352,32,10" ItemsSource="{Binding DataGridItems}" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="PARENT__NAME" Width="120" Binding="{Binding ParentName}" CanUserReorder="False"/>
+                <DataGridTextColumn Header="COMPONENT__NAME" Width="120" Binding="{Binding ComponentName}"/>
+                <DataGridTextColumn Header="PART__NUMBER" Width="120" Binding="{Binding PartNumber}"/>
+                <DataGridTextColumn Header="TITLE" Width="120" Binding="{Binding Title}"/>
+                <DataGridTextColumn Header="QUANTITY" Width="120" Binding="{Binding Quantity}"/>
+                <DataGridTextColumn Header="TYPE" Width="120" Binding="{Binding Type}"/>
+                <DataGridTextColumn Header="ITEM" Width="120" Binding="{Binding Item}"/>
+                <DataGridTextColumn Header="MATERIAL" Width="120" Binding="{Binding Material}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
